@@ -28,9 +28,7 @@ const reverseSeq2 = (n) => {
 
 // ONE LINE ANSWER
 
-const reverseSeq3 = (n) => {
-  return [...Array(n)].map((a, i) => i + 1).reverse();
-};
+const reverseSeq3 = (n) => [...Array(n)].map((a, i) => i + 1).reverse();
 
 console.log(reverseSeq(5));
 console.log(reverseSeq2(7));
