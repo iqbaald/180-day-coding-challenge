@@ -1,9 +1,9 @@
 /*
-180 day Coding Challenge (10/180)
+180 day Coding Challenge (11/180)
 Link : https://www.codewars.com/kata/5a2be17aee1aaefe2a000151
 Question : I'm new to coding and now I want to get the sum of two arrays... Actually the sum of all their elements. I'll appreciate for your help.
-Input : "I love arrays they are my favorite"
-Output : ["I", "love", "arrays", "they", "are", "my", "favorite"]
+Input : arrayPlusArray([1, 2, 3], [4, 5, 6])
+Output : 21
 */
 
 // BARBAR ANSWER
