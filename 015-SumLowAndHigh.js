@@ -26,11 +26,15 @@ console.log(sumArray2(null));
 console.log(sumArray2([6, 2, 1, 8, 10]));
 console.log(sumArray2([0, 1, 6, 10, 10]));
 
-// ANOTHER ANSWER
+// ONE LINE ANSWER
 
 function sumArray(array) {
-  if (array == null || array.length <= 2) return 0;
-  return;
+  return array == null || array.length <= 2
+    ? 0
+    : array
+        .sort((a, b) => a - b)
+        .slice(1, -1)
+        .reduce((a, b) => a + b);
 }
 console.log(sumArray(null));
 console.log(sumArray([6, 2, 1, 8, 10]));
