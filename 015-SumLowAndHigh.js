@@ -27,6 +27,8 @@ console.log(sumArray2([6, 2, 1, 8, 10]));
 console.log(sumArray2([0, 1, 6, 10, 10]));
 
 // ONE LINE ANSWER
+// Refference Sort : https://www.w3schools.com/js/js_array_sort.asp
+// Reffrence Reduce : https://www.w3schools.com/jsref/jsref_reduce.asp
 
 function sumArray(array) {
   return array == null || array.length <= 2
