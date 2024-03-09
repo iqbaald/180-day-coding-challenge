@@ -8,8 +8,24 @@ Output : 3
 
 // BARBAR ANSWER
 
-function getAverage(marks) {
-  //TODO : calculate the downward rounded average of the marks array
+function getAverage2(marks) {
+  let result = 0;
+  for (let i = 0; i < marks.length; i++) {
+    result += marks[i];
+  }
+  return Math.round(result / marks.length);
 }
 
+console.log(getAverage2([1, 2, 3, 4, 5]));
+console.log(getAverage2([1, 1, 1, 1, 1, 1, 1, 2]));
+console.log(getAverage2([2, 2, 2, 2]));
+
+// REDUCE ANSWER
+// Refference Reduce : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+const getAverage = (marks) =>
+  Math.floor(marks.reduce((acc, curr) => acc + curr) / marks.length);
+
 console.log(getAverage([1, 2, 3, 4, 5]));
+console.log(getAverage([1, 1, 1, 1, 1, 1, 1, 2]));
+console.log(getAverage([2, 2, 2, 2]));
