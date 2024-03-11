@@ -104,3 +104,148 @@ console.log(input.fullName);
 
 input.fullName = "Iqbaal Dhoifulloh";
 console.log(input.fullName);
+
+// OOP INHERITANCE AND OVERRIDING
+
+//create super class
+
+class Developer {
+  constructor(name) {
+    this.name = name;
+  }
+
+  commitChanges() {
+    console.log(`${this.name} is committing changes...`);
+  }
+}
+
+// class FrontEndDeveloper extends Developer{
+//   buildUI(){
+//     console.log(`${developer.name} is building UI...`)
+//   }
+// }
+// class BackEndDeveloper extends Developer{
+//   buildUI(){
+//     console.log(`${developer.name} is building API...`)
+//   }
+// }
+// class DevOps extends Developer{
+//   buildUI(){
+//     console.log(`${developer.name} is deploying App...`)
+//   }
+// }
+
+//merubahnya dengan object composition
+function canBuildUI(developer) {
+  return {
+    buildUI: () => console.log(`${developer.name} is building UI...`),
+  };
+}
+
+function canBuildApi(developer) {
+  return {
+    buildApi: () => console.log(`${developer.name} is building Api...`),
+  };
+}
+function canDeployApp(developer) {
+  return {
+    deployApp: () => console.log(`${developer.name} is deploying App...`),
+  };
+}
+
+//penggunaan object assign
+function createFrontEndDeveloper(name) {
+  const developer = new Developer(name);
+  return Object.assign(developer, canBuildUI(developer));
+}
+
+function createBackEndDeveloper(name) {
+  const developer = new Developer(name);
+  return Object.assign(developer, canBuildApi(developer));
+}
+
+function createDevOps(name) {
+  const developer = new Developer(name);
+  return Object.assign(developer, canDeployApp(developer));
+}
+
+function createFullStackDeveloper(name) {
+  const developer = new Developer(name);
+  return Object.assign(
+    developer,
+    canBuildUI(developer),
+    canBuildApi(developer),
+    canDeployApp(developer)
+  );
+}
+
+//
+const frontEndDeveloper = createFrontEndDeveloper("Fulan");
+frontEndDeveloper.commitChanges();
+frontEndDeveloper.buildUI();
+console.log(
+  `Apakah ${frontEndDeveloper.name} seorang developer?`,
+  frontEndDeveloper instanceof Developer
+);
+
+const backEndDeveloper = createBackEndDeveloper("Budi");
+backEndDeveloper.commitChanges();
+backEndDeveloper.buildApi();
+console.log(
+  `Apakah ${backEndDeveloper.name} seorang developer?`,
+  backEndDeveloper instanceof Developer
+);
+
+const devOpsDeveloper = createDevOps("Mardigu");
+devOpsDeveloper.commitChanges();
+devOpsDeveloper.deployApp();
+console.log(
+  `Apakah ${devOpsDeveloper.name} seorang developer?`,
+  devOpsDeveloper instanceof Developer
+);
+
+const fullStackDeveloper = createFullStackDeveloper("Iqbaal");
+fullStackDeveloper.commitChanges();
+fullStackDeveloper.buildUI();
+fullStackDeveloper.buildApi();
+fullStackDeveloper.deployApp();
+console.log(
+  `Apakah ${fullStackDeveloper.name} seorang developer?`,
+  fullStackDeveloper instanceof Developer
+);
+
+// SUBMISSION //
+
+class Animal {
+  constructor(name, age) {
+    (this.name = name), (this.age = parseInt(age));
+  }
+}
+
+class Rabbit extends Animal {
+  constructor(name, age) {
+    super(name, age);
+    this.isMammal = true;
+  }
+
+  eat() {
+    return `${this.name} sedang makan!`;
+  }
+}
+
+class Eagle extends Animal {
+  constructor(name, age) {
+    super(name, age);
+    this.isMammal = false;
+  }
+
+  fly() {
+    return `${this.name} sedang terbang!`;
+  }
+}
+
+const myRabbit = new Rabbit("Labi", 2);
+console.log(myRabbit.eat());
+
+const myEagle = new Eagle("Elo", 4);
+console.log(myEagle.fly());
