@@ -1,9 +1,6 @@
 /*
-180 day Coding Challenge (19/180)
-Link : https://www.codewars.com/kata/57eaeb9578748ff92a000009
-Question : Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
-Input : ('Daniel', 'Daniel') || ('Greg', 'Daniel')
-Output : 'Hello boss' || 'Hello guest'
+180 day Coding Challenge (26/180)
+Link : https://www.codewars.com/kata/54c27a33fb7da0db0100040e
 */
 
 // BARBAR ANSWER
