@@ -13,7 +13,7 @@ In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G
 "A" --> "T"
 "T" --> "A"
 "G" --> "C"
-"C" --> "G"
+"C" --> "G".
 
 */
 
