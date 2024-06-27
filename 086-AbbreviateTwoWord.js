@@ -14,10 +14,10 @@ patrick feeney => P.F
 function abbrevName(name) {
   let singleName = name.split(" ");
   return (
-    singleName[0].charAt(0).toUpperCase() +
+    singleName[0].charAt(0) +
     "." +
-    singleName[1].charAt(0).toUpperCase()
-  );
+    singleName[1].charAt(0)
+  ).toUpperCase();
 }
 
 console.log(abbrevName("sam harris"));
